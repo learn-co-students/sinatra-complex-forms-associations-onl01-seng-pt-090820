@@ -5,14 +5,14 @@
 
   <br>
 
-  <input type="text" name="pet_name">
+  <input type="text" id="pet_name" name="pet[name]">
 
   <br>
   <p>Select an existing owner or create a new one below.</p>
 
   <h3>Existing Owner</h3>
   <% @owners.each do |owner| %>
-    <input type="radio" name="owner[name]" id="<%= owner.id %>" value="<%= owner.id %>"><%= owner.name %><br>
+    <input type="radio" name="pet[owner_id]" id="<%= owner.id %>" value="<%= owner.id %>"><%= owner.name %>><br>
   <% end %>
   <br>
 
@@ -24,3 +24,4 @@
 
   <input type="submit" value="Create Pet">
 </form>
+

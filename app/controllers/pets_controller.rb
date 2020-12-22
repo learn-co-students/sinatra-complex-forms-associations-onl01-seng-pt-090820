@@ -11,7 +11,7 @@ class PetsController < ApplicationController
   end
 
   post '/pets' do 
-    @owner = Owner.create(params["owner"])
+    @pet = Pet.create(params["pet"])
     if !params["owner"]["name"].empty?
       @pet.owner << Owner.create(name: params["owner"]["name"])
     else
